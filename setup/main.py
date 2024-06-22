@@ -111,6 +111,7 @@ class PreferencesDialog:
         self.__init_full.set_active(self.__get_value("InitFull", False))
         self.__init_full_punct.set_active(self.__get_value("InitFullPunct", True))
         self.__init_simp.set_active(self.__get_value("InitSimplifiedChinese", True))
+        self.__init_trad.set_active(self.__get_value("InitTraditionalChinese", True))
         self.__lookup_table_orientation.set_active(self.__get_value("LookupTableOrientation", 0))
         self.__lookup_table_page_size.set_value(self.__get_value("LookupTablePageSize", 5))
 
@@ -119,6 +120,7 @@ class PreferencesDialog:
         self.__init_full.connect("toggled", self.__toggled_cb, "InitFull")
         self.__init_full_punct.connect("toggled", self.__toggled_cb, "InitFullPunct")
         self.__init_simp.connect("toggled", self.__toggled_cb, "InitSimplifiedChinese")
+        self.__init_trad.connect("toggled", self.__toggled_cb, "InitTraditionalChinese")
 
         def __lookup_table_page_size_changed_cb(adjustment):
             self.__set_value("LookupTablePageSize", int(adjustment.get_value()))
